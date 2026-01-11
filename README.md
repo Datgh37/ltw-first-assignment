@@ -1,32 +1,30 @@
-# TuNhanTamTinh - H? th?ng Qu?n l� Th?c ph?m
+# TuNhanTamTinh
 
-D? �n ASP.NET Core Razor Pages qu?n l� th�ng tin th?c ph?m bao g?m t�n, nh� s?n xu?t, ng�y s?n xu?t, h?n s? d?ng v� gi� c?.
+## Yêu cầu hệ thống
 
-## ?? Y�u c?u h? th?ng
-
-- **.NET 8 SDK** - [T?i t?i ?�y](https://dotnet.microsoft.com/download/dotnet/8.0)
+- **.NET 8 SDK** - [T?i t?i ?ây](https://dotnet.microsoft.com/download/dotnet/8.0)
 - **SQL Server** ho?c **SQL Server LocalDB**
-- **Visual Studio 2022+** ho?c **Visual Studio Code**
-- **Git** - [T?i t?i ?�y](https://git-scm.com/)
+- **Visual Studio 2022+** hoặc **Visual Studio Code**
+- **Git** - [Tải tại đây](https://git-scm.com/)
 
-## ?? C�i ??t d? �n
+## Cài ?đặt dự án
 
-### B??c 1: Clone repository
+### B1: Clone repository
 
 ```bash
 git clone https://github.com/Datgh37/ltw-first-assignment.git
 cd ltw-first-assignment
 ```
 
-### B??c 2: Restore packages
+### B2: Restore packages
 
 ```bash
 dotnet restore
 ```
 
-### B??c 3: C?u h�nh Connection String
+### B3: C?u hình Connection String
 
-M? file `appsettings.json` v� ki?m tra connection string:
+M? file `appsettings.json` và ki?m tra connection string:
 
 ```json
 {
@@ -36,171 +34,142 @@ M? file `appsettings.json` v� ki?m tra connection string:
 }
 ```
 
-**L?u �:** 
-- N?u d�ng **LocalDB**: Gi? nguy�n connection string tr�n
-- N?u d�ng **SQL Server**: Thay ??i th�nh `Server=localhost;Database=TuNhanTamTinhContext;Trusted_Connection=True;`
-- N?u d�ng **SQL Server v?i authentication**: `Server=localhost;Database=TuNhanTamTinhContext;User Id=your_username;Password=your_password;`
+**Lưu ý:** 
+- Nếu dùng **LocalDB**: Giữ nguyên connection string trên
+- Nếu dùng **SQL Server**: Thay đổi thành `Server=localhost;Database=TuNhanTamTinhContext;Trusted_Connection=True;`
+- Nếu dùng **SQL Server với authentication**: `Server=localhost;Database=TuNhanTamTinhContext;User Id=your_username;Password=your_password;`
 
-### B??c 4: T?o Database
+### Bước 4: Tạo Database
 
-Ch?y l?nh sau trong terminal (t?i th? m?c d? �n):
+Chạy lệnh sau trong terminal (tại thư mục dự án):
 
 ```bash
 dotnet ef database update
 ```
 
-L?nh n�y s? t? ??ng:
-- ? T?o database `TuNhanTamTinhContext`
-- ? Ch?y t?t c? migrations c� s?n
-- ? T?o b?ng `Food` v?i c?u tr�c ??y ??
+Lệnh này sẽ tự động:
+- Tạo database `TuNhanTamTinhContext`
+- Chạy tất cả migrations có sẵn
+- Tạo bảng `Food` với cấu trúc đầy đủ
 
-**N?u g?p l?i "dotnet ef not found"**, c�i ??t EF Core Tools:
+**Nếu gặp lỗi "dotnet ef not found"**, cài đặt EF Core Tools:
 
 ```bash
 dotnet tool install --global dotnet-ef
 ```
 
-### B??c 5: Ch?y ?ng d?ng
-
+### B5: Chạy ứng dụng 
+* Nên run bằng IIS
 ```bash
 dotnet run
 ```
 
-Ho?c nh?n **F5** trong Visual Studio.
+Hoặc nhấn **F5** trong Visual Studio.
 
-Truy c?p: `https://localhost:5001` ho?c `http://localhost:5000`
+Truy cập: `https://localhost:5001` hoặc `http://localhost:5000`
 
-## ?? C?u tr�c Database
+## Cấu trúc Database
 
-### B?ng Food
+### Bảng Food
 
-| C?t | Ki?u d? li?u | M� t? |
+| Column | DataType | Description |
 |-----|-------------|-------|
-| Id | int (PK) | M� ??nh danh t? ??ng t?ng |
-| FoodName | nvarchar(max) | T�n th?c ph?m |
-| Manufacturer | nvarchar(max) | Nh� s?n xu?t |
-| ManufacturingDate | datetime2 | Ng�y s?n xu?t |
+| Id | int (PK) | Mã ??nh danh t? ??ng t?ng |
+| FoodName | nvarchar(max) | Tên th?c ph?m |
+| Manufacturer | nvarchar(max) | Nhà s?n xu?t |
+| ManufacturingDate | datetime2 | Ngày s?n xu?t |
 | ExpiryDate | datetime2 | H?n s? d?ng |
-| Price | decimal(18,2) | Gi� ti?n |
+| Price | decimal(18,2) | Giá ti?n |
 
-## ??? C?u tr�c d? �n
+## Các lệnh hữu ích
 
-```
-TuNhanTamTinh/
-??? Data/
-?   ??? TuNhanTamTinhContext.cs    # DbContext
-??? Migrations/                     # EF Core Migrations
-?   ??? 20260111043306_Initial-Create.cs
-??? Models/
-?   ??? Food.cs                    # Model Food
-??? Pages/                         # Razor Pages
-?   ??? Foods/                     # CRUD pages cho Food
-?   ??? Shared/
-?   ?   ??? _Layout.cshtml
-?   ??? Index.cshtml
-??? wwwroot/                       # Static files
-??? Program.cs                     # Entry point
-??? appsettings.json              # Configuration
-```
-
-## ?? C�c l?nh h?u �ch
-
-### Qu?n l� Database
+### Quản lý Database
 
 ```bash
-# Xem danh s�ch migrations
+# Xem danh sách migrations
 dotnet ef migrations list
 
-# T?o migration m?i
+# Tạo migration mới
 dotnet ef migrations add TenMigration
 
-# C?p nh?t database
+# Cập nhật database
 dotnet ef database update
 
-# Rollback database v? migration tr??c
+# Rollback database về migration trước
 dotnet ef database update TenMigrationTruoc
 
-# X�a database
+# Xóa database
 dotnet ef database drop
 ```
 
-### Build v� Run
+### Build và Run
 
 ```bash
-# Build d? �n
+# Build dự án
 dotnet build
 
-# Run d? �n
+# Run dự án
 dotnet run
 
-# Run v?i watch mode (auto reload)
+# Run với watch mode (auto reload)
 dotnet watch run
 
 # Publish
 dotnet publish -c Release
 ```
 
-## ?? B?o m?t
+## Bảo mật
 
-**?? QUAN TR?NG:** Kh�ng commit c�c file sau l�n GitHub:
+** QUAN TRỌNG:** Không commit các file sau lên GitHub:
 
-- ? `appsettings.json` v?i connection string th?t (c� password)
-- ? `appsettings.Development.json` v?i th�ng tin nh?y c?m
-- ? Th? m?c `bin/`, `obj/`
+- ? `appsettings.json` v?i connection string th?t (có password)
+- ? `appsettings.Development.json` v?i thông tin nh?y c?m
+- ? Thư mụcc `bin/`, `obj/`
 - ? File `.vs/`, `*.user`, `*.suo`
 
-File `.gitignore` ?� ???c c?u h�nh ?? b? qua c�c file n�y.
+File `.gitignore` đã đc cấu hình đã bỏ qua các file này.
 
-## ?? Troubleshooting
+## Troubleshooting
 
-### L?i: Connection string not found
+### Lỗi:: Connection string not found
 
-**Gi?i ph�p:** Ki?m tra file `appsettings.json` c� ch?a `ConnectionStrings` ch?a.
+**Giải pháp:** Kiểm tra file `appsettings.json` có chứa `ConnectionStrings` chưa.
 
-### L?i: Cannot connect to SQL Server
+### Lỗi:: Cannot connect to SQL Server
 
-**Gi?i ph�p:**
-1. Ki?m tra SQL Server/LocalDB ?� ???c c�i ??t v� ?ang ch?y
-2. Ch?y `sqllocaldb info` ?? ki?m tra LocalDB
-3. Ch?y `sqllocaldb start mssqllocaldb` ?? kh?i ??ng LocalDB
+**Giải pháp:**
+1. Kiểm tra SQL Server/LocalDB đã được cài đặt và đang chạy
+2. Chạy `sqllocaldb info` để kiểm tra LocalDB
+3. Chạy `sqllocaldb start mssqllocaldb` để khởi động LocalDB
 
-### L?i: Build failed
+### Lỗi: Build failed
 
-**Gi?i ph�p:**
+**Giải pháp:**
 ```bash
 dotnet clean
 dotnet restore
 dotnet build
 ```
 
-### L?i: Migration already applied
+### Lỗi: Migration already applied
 
-**Gi?i ph�p:**
+**Giải pháp:**
 ```bash
 dotnet ef database drop
 dotnet ef database update
 ```
 
-## ?? ?�ng g�p
+## Đóng góp
 
 1. Fork repository
-2. T?o branch m?i: `git checkout -b feature/TenFeature`
+2. Tạo branch mới: `git checkout -b feature/TenFeature`
 3. Commit changes: `git commit -m "Add some feature"`
 4. Push to branch: `git push origin feature/TenFeature`
-5. T?o Pull Request
+5. Tạo Pull Request
 
-## ?? License
 
-D? �n n�y ???c t?o cho m?c ?�ch h?c t?p.
 
-## ?? Li�n h?
-
-- Repository: [https://github.com/Datgh37/ltw-first-assignment](https://github.com/Datgh37/ltw-first-assignment)
-- Issues: [https://github.com/Datgh37/ltw-first-assignment/issues](https://github.com/Datgh37/ltw-first-assignment/issues)
-
----
-
-**Ph�t tri?n b?i:** Datgh37  
+**Phát tri?n b?i:** Datgh37  
 **Framework:** ASP.NET Core 8.0 Razor Pages  
 **Database:** SQL Server / LocalDB  
 **ORM:** Entity Framework Core 8.0
