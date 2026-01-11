@@ -11,6 +11,7 @@ namespace TuNhanTamTinh.Models
         public string? FoodName { get; set; }
         public string? Manufacturer { get; set; }
 
+        [Display(Name = "Release Date")]
         [DataType(DataType.Date), DisplayName("MFD")]
         public DateTime ManufacturingDate { get; set; }
 
