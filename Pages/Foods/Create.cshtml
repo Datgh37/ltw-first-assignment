@@ -1,0 +1,54 @@
+﻿@page
+@model TuNhanTamTinh.Pages.Foods.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Food</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Food.FoodName" class="control-label"></label>
+                <input asp-for="Food.FoodName" class="form-control" />
+                <span asp-validation-for="Food.FoodName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Food.Manufacturer" class="control-label"></label>
+                <input asp-for="Food.Manufacturer" class="form-control" />
+                <span asp-validation-for="Food.Manufacturer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Food.ManufacturingDate" class="control-label"></label>
+                <input asp-for="Food.ManufacturingDate" class="form-control" />
+                <span asp-validation-for="Food.ManufacturingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Food.ExpiryDate" class="control-label"></label>
+                <input asp-for="Food.ExpiryDate" class="form-control" />
+                <span asp-validation-for="Food.ExpiryDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Food.Price" class="control-label"></label>
+                <input asp-for="Food.Price" class="form-control" />
+                <span asp-validation-for="Food.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
