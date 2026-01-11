@@ -14,9 +14,6 @@ x86/
 [Oo]bj/
 
 ## Sensitive files
-appsettings.json
-appsettings.Development.json
-appsettings.*.json
 
 ## NuGet
 *.nupkg

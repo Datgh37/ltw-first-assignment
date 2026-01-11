@@ -7,7 +7,7 @@
 - **Visual Studio 2022+** hoặc **Visual Studio Code**
 - **Git** - [Tải tại đây](https://git-scm.com/)
 
-## Cài ?đặt dự án
+## Cài đặt dự án
 
 ### B1: Clone repository
 
@@ -22,9 +22,9 @@ cd ltw-first-assignment
 dotnet restore
 ```
 
-### B3: C?u hình Connection String
+### B3: Cấu hình Connection String
 
-M? file `appsettings.json` và ki?m tra connection string:
+Mở file `appsettings.json` và kiểm tra connection string:
 
 ```json
 {
@@ -122,10 +122,10 @@ dotnet publish -c Release
 
 ** QUAN TRỌNG:** Không commit các file sau lên GitHub:
 
-- ? `appsettings.json` v?i connection string th?t (có password)
-- ? `appsettings.Development.json` v?i thông tin nh?y c?m
-- ? Thư mụcc `bin/`, `obj/`
-- ? File `.vs/`, `*.user`, `*.suo`
+- `appsettings.json` v?i connection string th?t (có password)
+- `appsettings.Development.json` v?i thông tin nh?y c?m
+- Thư mụcc `bin/`, `obj/`
+- File `.vs/`, `*.user`, `*.suo`
 
 File `.gitignore` đã đc cấu hình đã bỏ qua các file này.
 
@@ -169,7 +169,7 @@ dotnet ef database update
 
 
 
-**Phát tri?n b?i:** Datgh37  
+**Phát triển bởi:** Datgh37  
 **Framework:** ASP.NET Core 8.0 Razor Pages  
 **Database:** SQL Server / LocalDB  
 **ORM:** Entity Framework Core 8.0
