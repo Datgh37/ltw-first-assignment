@@ -24,10 +24,10 @@ namespace TuNhanTamTinh.Pages.Foods
         [BindProperty(SupportsGet = true)]
         public string? SearchString { get; set; }
 
-        public SelectList? Genres { get; set; }
+        public SelectList? Manufacturers { get; set; }
 
         [BindProperty(SupportsGet = true)]
-        public string? MovieGenre { get; set; }
+        public string? FoodManufacturer { get; set; }
 
         public async Task OnGetAsync()
         {
@@ -36,20 +36,20 @@ namespace TuNhanTamTinh.Pages.Foods
                                             orderby m.Manufacturer
                                             select m.Manufacturer;
 
-            var movies = from m in _context.Food
+            var foods = from m in _context.Food
                          select m;
 
             if (!string.IsNullOrEmpty(SearchString))
             {
-                movies = movies.Where(s => s.FoodName.Contains(SearchString));
+                foods = foods.Where(s => s.FoodName.Contains(SearchString));
             }
 
-            if (!string.IsNullOrEmpty(MovieGenre))
+            if (!string.IsNullOrEmpty(FoodManufacturer))
             {
-                movies = movies.Where(x => x.Manufacturer == MovieGenre);
+                foods = foods.Where(x => x.Manufacturer == FoodManufacturer);
             }
-            Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
-            Food = await movies.ToListAsync();
+            Manufacturers = new SelectList(await genreQuery.Distinct().ToListAsync());
+            Food = await foods.ToListAsync();
         }
     }
 }

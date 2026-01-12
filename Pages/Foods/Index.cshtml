@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{searchString?}"
 @model TuNhanTamTinh.Pages.Foods.IndexModel
 
 @{
@@ -12,7 +12,7 @@
 </p>
 <form>
     <p>
-        <select asp-for="MovieGenre" asp-items="Model.Genres">
+        <select asp-for="FoodManufacturer" asp-items="Model.Manufacturers">
             <option value="">All</option>
         </select>
         <label>Title: <input type="text" asp-for="SearchString" /></label>
