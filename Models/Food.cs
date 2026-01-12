@@ -12,11 +12,11 @@ namespace TuNhanTamTinh.Models
 
         [StringLength(60, MinimumLength = 3)]
         [Required]
-        public string? FoodName { get; set; }
+        public string FoodName { get; set; }
 
         [StringLength(60, MinimumLength = 3)]
         [Required]
-        public string? Manufacturer { get; set; }
+        public string Manufacturer { get; set; }
 
         [Display(Name = "Release Date")]
 
