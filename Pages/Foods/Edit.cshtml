@@ -2,12 +2,12 @@
 @model TuNhanTamTinhRazorPage.Pages.Foods.EditModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Chỉnh Sửa";
 }
 
-<h1>Edit</h1>
+<h1>Chỉnh Sửa</h1>
 
-<h4>Food</h4>
+<h4>Đồ Ăn</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -45,14 +45,14 @@
                 <span asp-validation-for="Food.Rating" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Lưu" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index">Quay Lại Danh Sách</a>
 </div>
 
 @section Scripts {

@@ -30,28 +30,37 @@ namespace TuNhanTamTinhRazorPage.Models
                         Manufacturer = "Pizza Hut",
                         ManufacturingDate = DateTime.ParseExact("11-09-2025", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                         ExpiryDate = DateTime.ParseExact("21-09-2025", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                        Price = 5.99M,
+                        Price = 150000M,
                         Rating = "A",    
                     },
 
                     new Food
                     {
                         FoodName = "Ratatouille",
-                        Manufacturer = "Remy",
+                        Manufacturer = "Chuột Remy",
                         ManufacturingDate = DateTime.ParseExact("11-04-2025", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                         ExpiryDate = DateTime.ParseExact("15-04-2025", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                        Price = 7.99M,
+                        Price = 500000M,
                         Rating = "B",
                     },
 
                     new Food
                     {
-                        FoodName = "Pho",
-                        Manufacturer = "Ba 5 dau ngo",
+                        FoodName = "Phở",
+                        Manufacturer = "Bà 5 đầu ngõ",
                         ManufacturingDate = DateTime.ParseExact("11-03-2025", "dd-MM-yyyy", CultureInfo.InvariantCulture),
                         ExpiryDate = DateTime.ParseExact("13-03-2025", "dd-MM-yyyy", CultureInfo.InvariantCulture),
-                        Price = 2M,
+                        Price = 35000M,
                         Rating = "A",
+                    },
+                    new Food
+                    {
+                        FoodName = "Cơm",
+                        Manufacturer = "Mẹ nấu",
+                        ManufacturingDate = DateTime.Now,
+                        ExpiryDate = DateTime.Now,
+                        Price = 0,
+                        Rating = "S",
                     }
                 );
                 context.SaveChanges();

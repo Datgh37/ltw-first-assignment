@@ -2,21 +2,21 @@
 @model TuNhanTamTinhRazorPage.Pages.Foods.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh Sách Đồ Ăn";
 }
 
-<h1>Index</h1>
+<h1>Danh Sách Đồ Ăn</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Tạo Mới</a>
 </p>
 <form>
     <p>
         <select asp-for="FoodManufacturer" asp-items="Model.Manufacturers">
-            <option value="">All</option>
+            <option value="">Tất Cả</option>
         </select>
-        <label>Title: <input type="text" asp-for="SearchString" /></label>
-        <input type="submit" value="Filter" />
+        <label>Tên: <input type="text" asp-for="SearchString" /></label>
+        <input type="submit" value="Lọc" />
     </p>
 </form>
 <table class="table">
@@ -65,9 +65,9 @@
                 @Html.DisplayFor(modelItem => item.Rating)
             </td>
             <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Sửa</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Chi Tiết</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Xóa</a>
             </td>
         </tr>
 }
