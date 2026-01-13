@@ -9,7 +9,6 @@ namespace TuNhanTamTinh.Models
         public int Id { get; set; }
 
         [DisplayName("Name")]
-
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string? FoodName { get; set; }
@@ -19,11 +18,12 @@ namespace TuNhanTamTinh.Models
         public string? Manufacturer { get; set; }
 
         [Display(Name = "Release Date")]
-
         [DataType(DataType.Date), DisplayName("MFD")]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime ManufacturingDate { get; set; }
 
         [DataType(DataType.Date), DisplayName("EXP")]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime ExpiryDate { get; set; }
 
         [Range(1, 100)]
