@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using TuNhanTamTinh.Models;
+using TuNhanTamTinhRazorPage.Models;
 
-namespace TuNhanTamTinh.Data
+namespace TuNhanTamTinhRazorPage.Data
 {
     public class TuNhanTamTinhContext : DbContext
     {
@@ -14,6 +14,6 @@ namespace TuNhanTamTinh.Data
         {
         }
 
-        public DbSet<TuNhanTamTinh.Models.Food> Food { get; set; } = default!;
+        public DbSet<TuNhanTamTinhRazorPage.Models.Food> Food { get; set; } = default!;
     }
 }

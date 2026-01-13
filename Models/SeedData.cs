@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Globalization;
-using TuNhanTamTinh.Data;
+using TuNhanTamTinhRazorPage.Data;
 
-namespace TuNhanTamTinh.Models
+namespace TuNhanTamTinhRazorPage.Models
 {
     public class SeedData
     {

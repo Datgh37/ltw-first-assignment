@@ -1,4 +1,4 @@
-# TuNhanTamTinh - Hệ thống Quản lý Thực phẩm
+# TuNhanTamTinhRazorPage - Hệ thống Quản lý Thực phẩm
 
 ## 🎯 Yêu cầu hệ thống
 
@@ -26,7 +26,7 @@ git clone https://github.com/Datgh37/ltw-first-assignment.git
 cd ltw-first-assignment
 ```
 
-Sau đó mở file **TuNhanTamTinh.sln** bằng Visual Studio.
+Sau đó mở file **TuNhanTamTinhRazorPage.sln** bằng Visual Studio.
 
 ---
 
@@ -48,7 +48,7 @@ Nếu không tự động, làm như sau:
 ```json
 {
   "ConnectionStrings": {
-    "TuNhanTamTinhContext": "Server=(localdb)\\mssqllocaldb;Database=TuNhanTamTinhContext;Trusted_Connection=True;MultipleActiveResultSets=true"
+    "TuNhanTamTinhRazorPageContext": "Server=(localdb)\\mssqllocaldb;Database=TuNhanTamTinhRazorPageContext;Trusted_Connection=True;MultipleActiveResultSets=true"
   }
 }
 ```
@@ -112,7 +112,7 @@ dotnet run
 2. Mở rộng:
    - **(localdb)\\mssqllocaldb**
    - **Databases**
-   - **TuNhanTamTinhContext**
+   - **TuNhanTamTinhRazorPageContext**
    - **Tables**
 3. Thấy bảng **dbo.Food** → Thành công! ✅
 
@@ -121,7 +121,7 @@ dotnet run
 2. Chuột phải **Data Connections** → **Add Connection**
 3. Chọn **Microsoft SQL Server** → **Continue**
 4. Server name: `(localdb)\mssqllocaldb`
-5. Database name: `TuNhanTamTinhContext`
+5. Database name: `TuNhanTamTinhRazorPageContext`
 6. Click **OK**
 
 ---
@@ -180,7 +180,7 @@ Update-Database
 2. Thêm đoạn sau vào trong `{ }`:
 ```json
 "ConnectionStrings": {
-  "TuNhanTamTinhContext": "Server=(localdb)\\mssqllocaldb;Database=TuNhanTamTinhContext;Trusted_Connection=True;MultipleActiveResultSets=true"
+  "TuNhanTamTinhRazorPageContext": "Server=(localdb)\\mssqllocaldb;Database=TuNhanTamTinhRazorPageContext;Trusted_Connection=True;MultipleActiveResultSets=true"
 }
 ```
 
@@ -211,7 +211,7 @@ sqllocaldb start mssqllocaldb
 
 **Giải pháp:**
 1. Đảm bảo đã mở đúng **solution** (.sln file)
-2. Trong **Package Manager Console**, kiểm tra **Default project** có đúng là **TuNhanTamTinh** không
+2. Trong **Package Manager Console**, kiểm tra **Default project** có đúng là **TuNhanTamTinhRazorPage** không
 3. Thử lại lệnh:
 ```powershell
 Update-Database -Verbose
@@ -232,7 +232,7 @@ Update-Database -Verbose
 ## 📁 Cấu trúc Project
 
 ```
-TuNhanTamTinh/
+TuNhanTamTinhRazorPage/
 ├── 📂 Data/
 │   └── TuNhanTamTinhContext.cs    # DbContext
 ├── 📂 Migrations/                  # EF Core Migrations (QUAN TRỌNG!)
@@ -248,7 +248,7 @@ TuNhanTamTinh/
 ├── 📂 wwwroot/                     # Static files (CSS, JS, images)
 ├── 📄 Program.cs                   # Entry point, cấu hình services
 ├── 📄 appsettings.json            # Configuration & Connection string
-└── 📄 TuNhanTamTinh.csproj        # Project file
+└── 📄 TuNhanTamTinhRazorPage.csproj        # Project file
 ```
 
 ---

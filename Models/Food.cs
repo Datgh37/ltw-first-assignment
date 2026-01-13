@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TuNhanTamTinh.Models
+namespace TuNhanTamTinhRazorPage.Models
 {
     public class Food
     {

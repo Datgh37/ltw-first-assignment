@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using TuNhanTamTinh.Data;
-using TuNhanTamTinh.Models;
+using TuNhanTamTinhRazorPage.Data;
+using TuNhanTamTinhRazorPage.Models;
 
-namespace TuNhanTamTinh.Pages.Foods
+namespace TuNhanTamTinhRazorPage.Pages.Foods
 {
     public class DeleteModel : PageModel
     {
-        private readonly TuNhanTamTinh.Data.TuNhanTamTinhContext _context;
+        private readonly TuNhanTamTinhRazorPage.Data.TuNhanTamTinhContext _context;
 
-        public DeleteModel(TuNhanTamTinh.Data.TuNhanTamTinhContext context)
+        public DeleteModel(TuNhanTamTinhRazorPage.Data.TuNhanTamTinhContext context)
         {
             _context = context;
         }

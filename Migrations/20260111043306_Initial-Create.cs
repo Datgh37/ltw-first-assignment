@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace TuNhanTamTinh.Migrations
+namespace TuNhanTamTinhRazorPage.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

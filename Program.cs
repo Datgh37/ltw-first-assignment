@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using TuNhanTamTinh.Data;
-using TuNhanTamTinh.Models;
-namespace TuNhanTamTinh
+using TuNhanTamTinhRazorPage.Data;
+using TuNhanTamTinhRazorPage.Models;
+
+namespace TuNhanTamTinhRazorPage
 {
     public class Program
     {
@@ -10,7 +11,7 @@ namespace TuNhanTamTinh
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<TuNhanTamTinhContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("TuNhanTamTinhContext") ?? throw new InvalidOperationException("Connection string 'TuNhanTamTinhContext' not found.")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("TuNhanTamTinhRazorPageContext") ?? throw new InvalidOperationException("Connection string 'TuNhanTamTinhRazorPageContext' not found.")));
 
             // Add services to the container.
             builder.Services.AddRazorPages();

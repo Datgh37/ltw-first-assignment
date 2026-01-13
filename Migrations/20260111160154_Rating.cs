@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace TuNhanTamTinh.Migrations
+namespace TuNhanTamTinhRazorPage.Migrations
 {
     /// <inheritdoc />
     public partial class Rating : Migration

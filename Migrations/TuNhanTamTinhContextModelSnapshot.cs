@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TuNhanTamTinh.Data;
+using TuNhanTamTinhRazorPage.Data;
 
 #nullable disable
 
-namespace TuNhanTamTinh.Migrations
+namespace TuNhanTamTinhRazorPage.Migrations
 {
     [DbContext(typeof(TuNhanTamTinhContext))]
     partial class TuNhanTamTinhContextModelSnapshot : ModelSnapshot
@@ -22,7 +22,7 @@ namespace TuNhanTamTinh.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("TuNhanTamTinh.Models.Food", b =>
+            modelBuilder.Entity("TuNhanTamTinhRazorPage.Models.Food", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

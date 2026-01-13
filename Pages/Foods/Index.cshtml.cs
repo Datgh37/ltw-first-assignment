@@ -6,16 +6,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TuNhanTamTinh.Data;
-using TuNhanTamTinh.Models;
+using TuNhanTamTinhRazorPage.Data;
+using TuNhanTamTinhRazorPage.Models;
 
-namespace TuNhanTamTinh.Pages.Foods
+namespace TuNhanTamTinhRazorPage.Pages.Foods
 {
     public class IndexModel : PageModel
     {
-        private readonly TuNhanTamTinh.Data.TuNhanTamTinhContext _context;
+        private readonly TuNhanTamTinhRazorPage.Data.TuNhanTamTinhContext _context;
 
-        public IndexModel(TuNhanTamTinh.Data.TuNhanTamTinhContext context)
+        public IndexModel(TuNhanTamTinhRazorPage.Data.TuNhanTamTinhContext context)
         {
             _context = context;
         }
