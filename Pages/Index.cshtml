@@ -4,7 +4,48 @@
     ViewData["Title"] = "Trang Chủ";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Chào Mừng</h1>
-    <p>Tìm hiểu về <a href="https://learn.microsoft.com/aspnet/core">xây dựng ứng dụng Web với ASP.NET Core</a>.</p>
-</div>
+<section class="glass-card card-cta shadow-sm mb-4">
+    <div class="row align-items-center g-4">
+        <div class="col-md-8">
+            <h1 class="page-title mb-2"><i class="bi bi-emoji-smile me-2"></i>Chào mừng đến TNTT Foods</h1>
+            <p class="page-subtitle">Khám phá, quản lý và thưởng thức những món ăn hấp dẫn mỗi ngày.</p>
+            <div class="d-flex flex-wrap gap-2 mt-3">
+                <a class="btn btn-primary" asp-page="/Foods/Index"><i class="bi bi-basket2-fill me-1"></i> Xem danh sách món</a>
+                <a class="btn btn-outline-primary" asp-page="/Foods/Create"><i class="bi bi-plus-circle me-1"></i> Thêm món mới</a>
+            </div>
+        </div>
+        <div class="col-md-4 text-md-end text-center">
+            <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f37d.svg" alt="Food" class="img-fluid" style="max-width:140px;">
+        </div>
+    </div>
+</section>
+
+<section class="row g-3">
+    <div class="col-md-4">
+        <div class="glass-card h-100">
+            <div class="d-flex align-items-center mb-2">
+                <span class="badge bg-warning text-dark me-2"><i class="bi bi-clock-history"></i></span>
+                <h5 class="mb-0">Nhanh chóng</h5>
+            </div>
+            <p class="text-muted mb-0">Quản lý thông tin món ăn chỉ với vài thao tác đơn giản.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="glass-card h-100">
+            <div class="d-flex align-items-center mb-2">
+                <span class="badge bg-success me-2"><i class="bi bi-stars"></i></span>
+                <h5 class="mb-0">Tươi ngon</h5>
+            </div>
+            <p class="text-muted mb-0">Theo dõi hạn sử dụng, đảm bảo món ăn luôn tươi mới.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="glass-card h-100">
+            <div class="d-flex align-items-center mb-2">
+                <span class="badge bg-primary me-2"><i class="bi bi-people"></i></span>
+                <h5 class="mb-0">Trải nghiệm</h5>
+            </div>
+            <p class="text-muted mb-0">Giao diện thân thiện, tối ưu cho việc tìm kiếm và chỉnh sửa.</p>
+        </div>
+    </div>
+</section>

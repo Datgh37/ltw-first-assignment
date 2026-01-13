@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --food-primary: #ff7043;
+  --food-primary-dark: #f4511e;
+  --food-secondary: #ffe8d6;
+  --food-accent: #ffd166;
+  --food-green: #4caf50;
+  --food-red: #ef5350;
+  --food-text: #2f2a28;
+  --food-muted: #7b6f67;
+}
+
 html {
-  font-size: 14px;
+  font-size: 15px;
+  position: relative;
+  min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -8,15 +23,195 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+body.food-theme {
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 209, 102, 0.22), transparent 35%),
+              radial-gradient(circle at 80% 0%, rgba(255, 112, 67, 0.18), transparent 30%),
+              linear-gradient(180deg, #fffaf5 0%, #fff3e6 100%);
+  color: var(--food-text);
+  margin: 0;
+  min-height: 100vh;
 }
 
-html {
+a {
+  color: var(--food-primary);
+}
+
+a:hover {
+  color: var(--food-primary-dark);
+}
+
+.food-navbar {
+  background: linear-gradient(90deg, #fff6ec, #ffe3c4);
+  border-bottom: 1px solid #ffd9b3;
+}
+
+.navbar-brand {
+  color: var(--food-text);
+  letter-spacing: 0.4px;
+}
+
+.navbar-brand:hover {
+  color: var(--food-primary);
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--food-text) !important;
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem !important;
+}
+
+.nav-link:hover, .nav-link:focus {
+  background: rgba(255, 112, 67, 0.12);
+  color: var(--food-primary) !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--food-primary), var(--food-primary-dark));
+  border: none;
+  box-shadow: 0 12px 25px rgba(255, 112, 67, 0.25);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: linear-gradient(135deg, var(--food-primary-dark), var(--food-primary));
+}
+
+.btn-outline-primary {
+  color: var(--food-primary);
+  border-color: var(--food-primary);
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background: var(--food-primary);
+  border-color: var(--food-primary);
+}
+
+main {
   position: relative;
-  min-height: 100%;
 }
 
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #ffe2c6;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(53, 39, 28, 0.08);
+  padding: 1.5rem;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.page-title {
+  font-weight: 700;
+  color: var(--food-text);
+  margin: 0;
+}
+
+.page-subtitle {
+  color: var(--food-muted);
+  margin: 0;
+}
+
+.filter-card {
+  border-style: dashed;
+  border-color: #ffd9b3;
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--food-muted);
+}
+
+.form-control, .form-select {
+  border-radius: 12px;
+  border: 1px solid #ffd9b3;
+  box-shadow: none;
+  transition: all .2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--food-primary);
+  box-shadow: 0 0 0 0.15rem rgba(255, 112, 67, 0.25);
+}
+
+.table-food {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+
+.table-food thead th {
+  background: #fff3e0;
+  color: var(--food-text);
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.table-food tbody tr {
+  background: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
+}
+
+.table-food tbody tr:hover {
+  transform: translateY(-2px);
+  transition: transform .15s ease;
+}
+
+.table-food td {
+  border-top: none;
+  border-bottom: none;
+}
+
+.badge-rating {
+  background: var(--food-accent);
+  color: var(--food-text);
+  font-weight: 700;
+  border-radius: 50rem;
+  padding: 0.45rem 0.75rem;
+  box-shadow: 0 6px 12px rgba(255, 209, 102, 0.35);
+}
+
+.footer {
+  background: #fff3e0;
+  border-top: 1px solid #ffd9b3 !important;
+  color: var(--food-muted);
+  padding: 1.2rem 0;
+}
+
+.card-cta {
+  background: linear-gradient(135deg, rgba(255, 112, 67, 0.12), rgba(255, 209, 102, 0.12));
+  border: 1px dashed rgba(255, 112, 67, 0.4);
+}
+
+.table-action a {
+  text-decoration: none;
+  margin-right: 0.25rem;
+}
+
+.section-title {
+  font-weight: 700;
+  color: var(--food-text);
+}
+
+hr {
+  border-color: #ffe2c6;
+  opacity: 1;
+}
+
+.alert-food {
+  background: rgba(255, 112, 67, 0.08);
+  border: 1px solid rgba(255, 112, 67, 0.2);
+  color: var(--food-text);
+}
+
+/* Keep bottom spacing for footer */
 body {
   margin-bottom: 60px;
 }

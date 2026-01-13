@@ -5,71 +5,72 @@
     ViewData["Title"] = "Danh Sách Đồ Ăn";
 }
 
-<h1>Danh Sách Đồ Ăn</h1>
+<div class="page-header mb-3">
+    <div>
+        <h1 class="page-title"><i class="bi bi-collection-play-fill me-2"></i>Danh Sách Đồ Ăn</h1>
+        <p class="page-subtitle">Khám phá và quản lý những món ngon mỗi ngày</p>
+    </div>
+    <a class="btn btn-primary btn-lg shadow-sm" asp-page="Create">
+        <i class="bi bi-plus-circle me-1"></i> Tạo Mới
+    </a>
+</div>
 
-<p>
-    <a asp-page="Create">Tạo Mới</a>
-</p>
-<form>
-    <p>
-        <select asp-for="FoodManufacturer" asp-items="Model.Manufacturers">
-            <option value="">Tất Cả</option>
-        </select>
-        <label>Tên: <input type="text" asp-for="SearchString" /></label>
-        <input type="submit" value="Lọc" />
-    </p>
-</form>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Food[0].FoodName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Food[0].Manufacturer)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Food[0].ManufacturingDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Food[0].ExpiryDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Food[0].Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Food[0].Rating)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="glass-card filter-card mb-4">
+    <form method="get" class="row g-3 align-items-end">
+        <div class="col-md-4">
+            <label class="form-label" asp-for="FoodManufacturer">Nhà sản xuất</label>
+            <select asp-for="FoodManufacturer" asp-items="Model.Manufacturers" class="form-select">
+                <option value="">Tất Cả</option>
+            </select>
+        </div>
+        <div class="col-md-5">
+            <label class="form-label" for="SearchString">Tên món</label>
+            <div class="input-group">
+                <span class="input-group-text bg-white text-warning"><i class="bi bi-search"></i></span>
+                <input type="search" asp-for="SearchString" class="form-control" placeholder="Nhập tên món..." />
+            </div>
+        </div>
+        <div class="col-md-3 text-md-end">
+            <button type="submit" class="btn btn-primary w-100">
+                <i class="bi bi-funnel me-1"></i> Lọc
+            </button>
+        </div>
+    </form>
+</div>
+
+<div class="card glass-card shadow-sm">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle table-food mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Food[0].FoodName)</th>
+                        <th>@Html.DisplayNameFor(model => model.Food[0].Manufacturer)</th>
+                        <th>@Html.DisplayNameFor(model => model.Food[0].ManufacturingDate)</th>
+                        <th>@Html.DisplayNameFor(model => model.Food[0].ExpiryDate)</th>
+                        <th>@Html.DisplayNameFor(model => model.Food[0].Price)</th>
+                        <th>@Html.DisplayNameFor(model => model.Food[0].Rating)</th>
+                        <th class="text-end">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
 @foreach (var item in Model.Food) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FoodName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Manufacturer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ManufacturingDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExpiryDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Sửa</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Chi Tiết</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Xóa</a>
-            </td>
-        </tr>
+                    <tr>
+                        <td class="fw-semibold">@item.FoodName</td>
+                        <td class="text-muted">@item.Manufacturer</td>
+                        <td class="text-nowrap">@item.ManufacturingDate.ToString("dd/MM/yyyy")</td>
+                        <td class="text-nowrap">@item.ExpiryDate.ToString("dd/MM/yyyy")</td>
+                        <td class="fw-semibold text-primary">@string.Format("{0:N0} ₫", item.Price)</td>
+                        <td><span class="badge badge-rating">@item.Rating</span></td>
+                        <td class="text-end table-action text-nowrap">
+                            <a class="btn btn-sm btn-outline-primary" asp-page="./Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square me-1"></i> Sửa</a>
+                            <a class="btn btn-sm btn-outline-secondary" asp-page="./Details" asp-route-id="@item.Id"><i class="bi bi-eye me-1"></i> Chi Tiết</a>
+                            <a class="btn btn-sm btn-outline-danger" asp-page="./Delete" asp-route-id="@item.Id"><i class="bi bi-trash me-1"></i> Xóa</a>
+                        </td>
+                    </tr>
 }
-    </tbody>
-</table>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

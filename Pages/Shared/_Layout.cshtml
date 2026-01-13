@@ -4,44 +4,64 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Foods</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TuNhanTamTinhRazorPage.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body class="food-theme">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light food-navbar shadow-sm">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">TNTT Foods</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-page="/Index">
+                    <i class="bi bi-egg-fried me-2"></i>
+                    <span class="fw-bold">TNTT Foods</span>
+                    <small class="text-muted ms-2 d-none d-md-inline">Fresh &amp; Tasty</small>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Trang Chủ</a>
+                            <a class="nav-link" asp-area="" asp-page="/Index">
+                                <i class="bi bi-house-heart me-1"></i> Trang Chủ
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Chính Sách</a>
+                            <a class="nav-link" asp-area="" asp-page="/Privacy">
+                                <i class="bi bi-shield-check me-1"></i> Chính Sách
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="./Foods/Index">Đồ Ăn</a>
+                            <a class="nav-link" asp-area="" asp-page="/Foods/Index">
+                                <i class="bi bi-basket2-fill me-1"></i> Đồ Ăn
+                            </a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a class="btn btn-primary btn-sm shadow-sm" asp-area="" asp-page="/Foods/Create">
+                                <i class="bi bi-plus-circle me-1"></i> Thêm Món
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container py-4">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - TuNhanTamTinhRazorPage - <a asp-area="" asp-page="/Privacy">Chính Sách Bảo Mật</a>
+        <div class="container d-flex justify-content-between align-items-center">
+            <span>&copy; 2026 - TuNhanTamTinhRazorPage</span>
+            <a class="text-decoration-none" asp-area="" asp-page="/Privacy"><i class="bi bi-shield-lock me-1"></i> Chính Sách Bảo Mật</a>
         </div>
     </footer>
 

@@ -28,7 +28,7 @@ namespace TuNhanTamTinhRazorPage.Models
         public DateTime ExpiryDate { get; set; }
 
         [DisplayName("Giá")]
-        [Range(1, 100)]
+        [Range(0, double.MaxValue, ErrorMessage = "Giá tiền không được nhỏ hơn 0!")] 
         [DataType(DataType.Currency)]
         [Column(TypeName = "decimal(18,2)")]
         [DisplayFormat(DataFormatString = "{0:N0} VND", ApplyFormatInEditMode = false)]
